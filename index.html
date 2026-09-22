@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Panther Service Guide</title>
-<meta name="description" content="Nonprofits and volunteer opportunities for Georgia State University students.">
+<title>Atlanta Service Guide</title>
+<meta name="description" content="Nonprofits, volunteer opportunities and events across Atlanta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Libre+Franklin:wght@400;500;600&display=swap">
@@ -9,7 +9,6 @@
   --ground:#F4F6FB; --surface:#FFFFFF; --ink:#0E1A36; --muted:#4A5675;
   --line:#D6DCEA; --blue:#0039A6; --blue-soft:#E3EAF8; --red:#C8102E;
   --on-blue:#FFFFFF; --ok:#1E7A46;
-  --c-acfb:#D9731A; --c-hab:#1F8A5B; --c-oh:#8A3FB8; --c-gsu:#0039A6;
   --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --body:"Libre Franklin",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
@@ -18,14 +17,14 @@
     color-scheme:dark;
     --ground:#0A1122; --surface:#121C33; --ink:#E8EDF8; --muted:#A3AECB;
     --line:#26345A; --blue:#6E9BFF; --blue-soft:#18264A; --red:#FF6B7F;
-    --on-blue:#0A1122; --ok:#5BD08C; --c-acfb:#F2A057; --c-hab:#4CC08A; --c-oh:#C08AE6; --c-gsu:#6E9BFF;
+    --on-blue:#0A1122; --ok:#5BD08C;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --ground:#0A1122; --surface:#121C33; --ink:#E8EDF8; --muted:#A3AECB;
   --line:#26345A; --blue:#6E9BFF; --blue-soft:#18264A; --red:#FF6B7F;
-  --on-blue:#0A1122; --ok:#5BD08C; --c-acfb:#F2A057; --c-hab:#4CC08A; --c-oh:#C08AE6; --c-gsu:#6E9BFF;
+  --on-blue:#0A1122; --ok:#5BD08C;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);font:400 16px/1.6 var(--body)}
@@ -102,7 +101,7 @@ textarea{min-height:130px;resize:vertical}
 .hp{position:absolute;left:-9999px}
 footer{padding-block:28px;color:var(--muted);font-size:14px}
 
-.acfb,.hab,.oh,.gsu{--c:var(--line)}
+.acfb,.hab,.oh{--c:var(--line)}
 .hero{position:relative;overflow:hidden;border-bottom:0;padding-block:72px 56px;background:#0B1B3F;color:#fff}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,20,52,.92) 0%,rgba(8,20,52,.78) 45%,rgba(8,20,52,.35) 100%)}
@@ -149,13 +148,39 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
 .none{color:var(--muted);font-size:15px;margin:0}
 .weekly{border-top:1px solid var(--line);padding-top:12px}
 .weekly p{margin:0 0 10px;font-size:14px}
+
+.nextup{background:var(--surface);border-bottom:1px solid var(--line)}
+.nextup .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-block:14px}
+.nextup .lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.nextup b{font-weight:600}
+.nextup a{margin-left:auto;font-weight:600}
+.steps-sec{padding-bottom:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:2px solid var(--ink)}
+.step{padding:20px 20px 20px 0;display:flex;gap:14px}
+.step + .step{padding-left:20px;border-left:1px solid var(--line)}
+@media (max-width:780px){.step + .step{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
+.step .num{font:800 44px/0.9 var(--display);color:var(--blue)}
+.step h3{font-weight:800;font-size:22px;text-transform:uppercase;margin-bottom:4px}
+.step p{margin:0 0 6px;color:var(--muted);font-size:15px}
+.step a{font-weight:600;font-size:15px}
+.gcal{font-size:14px;font-weight:600}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px 40px;align-items:start;border-top:1px solid var(--line);padding-top:40px}
+@media (max-width:780px){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 12px;max-width:60ch}
+.site-foot{background:#0B1B3F;color:#C9D3EA;padding-block:36px 28px;font-size:14px}
+.site-foot .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:24px}
+@media (max-width:700px){.site-foot .cols{grid-template-columns:1fr}}
+.site-foot h4{margin:0 0 10px;font:800 18px var(--display);text-transform:uppercase;color:#fff;letter-spacing:.04em}
+.site-foot a{color:#fff}
+.site-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.site-foot .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:24px;padding-top:14px;color:#9FAACC}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head><body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#home" data-link="home">Panther Service Guide</a>
+    <a class="brand" href="#home" data-link="home">Atlanta Service Guide</a>
     <nav aria-label="Pages">
       <a href="#home" data-link="home">Home</a>
       <a href="#nonprofits" data-link="nonprofits">Nonprofits</a>
@@ -173,18 +198,29 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
     </video>
     <div class="hero-shade" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow">Georgia State University · Atlanta, GA</p>
+      <p class="eyebrow">Atlanta, GA</p>
       <h1>Serve the city you study in</h1>
       <p class="lede">Your guide to giving back in Atlanta. Discover local nonprofits working on hunger, housing and health, find volunteer opportunities that fit your schedule, and keep track of upcoming events. Every listing links to the organization's official page so you can sign up directly.</p>
       <div class="stats"><span>Hunger relief</span><span>Affordable housing</span><span>Food as medicine</span><span>No experience needed for most roles</span></div>
       <div class="hero-ctas"><a class="btn-link" href="#volunteer">Find an opportunity</a><a class="btn-link ghost" href="#contact">Contact Us</a></div>
     </div>
   </div>
+  <div class="nextup"><div class="wrap"><span class="lbl">Next up</span><span id="nextText"></span><a href="#home" id="toCal">See calendar →</a></div></div>
+  <section class="steps-sec">
+    <div class="wrap">
+      <div class="sec-head"><h2>How to get started</h2><p>From browsing to your first shift.</p></div>
+      <div class="steps">
+        <div class="step"><span class="num">1</span><div><h3>Pick a cause</h3><p>Hunger, housing or health. Read each nonprofit's mission to find your fit.</p><a href="#nonprofits">Browse nonprofits →</a></div></div>
+        <div class="step"><span class="num">2</span><div><h3>Choose a role</h3><p>See what you'll do and what's needed. Most roles need no experience.</p><a href="#volunteer">View opportunities →</a></div></div>
+        <div class="step"><span class="num">3</span><div><h3>Sign up</h3><p>Register on the organization's site. Some roles, like Habitat builds, start with an orientation.</p><a href="#contact">Questions? Ask us →</a></div></div>
+      </div>
+    </div>
+  </section>
   <section class="cal-sec" id="cal">
     <div class="wrap">
       <div class="sec-head">
         <h2>Events Calendar</h2>
-        <p>Upcoming events from our featured nonprofits and Georgia State service days. Tap a date to see details.</p>
+        <p>Upcoming events from our featured nonprofits. Tap a date to see details.</p>
       </div>
       <div class="cal-layout">
         <div class="cal">
@@ -205,6 +241,15 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
             <p><b>Food Bank sort &amp; pack shifts</b> run on most days. Pick an open shift on the <a href="https://acfb.volunteerhub.com/vv2/" target="_blank" rel="noopener">Food Bank volunteer calendar →</a></p>
           </div>
         </aside>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap about">
+      <h2>About this guide</h2>
+      <div>
+        <p>The Atlanta Service Guide was created by students to make hands-on service in Atlanta easier to find. We gather volunteer roles and events from local nonprofits in one place and link straight to each organization's official sign-up page.</p>
+        <p>Know an organization we should feature, or spot something out of date? <a href="#contact">Let us know</a>.</p>
       </div>
     </div>
   </section>
@@ -299,14 +344,14 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
         <div class="email-box"><code id="email">professorfeedback@hotmail.com</code><button class="btn alt" id="copy" type="button">Copy</button></div>
       </div>
       <form id="contactForm" action="https://formsubmit.co/professorfeedback@hotmail.com" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="New message from the Panther Service Guide">
+        <input type="hidden" name="_subject" value="New message from the Atlanta Service Guide">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" id="nextUrl" value="">
         <input class="hp" type="text" name="_honey" id="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row2">
           <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name" placeholder="Your name"></div>
-          <div><label for="from">Your email</label><input id="from" name="email" type="email" required autocomplete="email" placeholder="you@student.gsu.edu"></div>
+          <div><label for="from">Your email</label><input id="from" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
         </div>
         <div><label for="topic">Topic</label>
           <select id="topic" name="topic">
@@ -324,8 +369,15 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
 </div>
 </main>
 
-<footer>
-  <div class="wrap">Panther Service Guide · A Georgia State University class project. Organization details and mission statements come from each nonprofit's official website; check their pages for current schedules.</div>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Atlanta Service Guide</h4><p style="margin:0;max-width:40ch">A student-made guide to volunteering with Atlanta nonprofits.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="#home">Home</a></li><li><a href="#nonprofits">Nonprofits</a></li><li><a href="#volunteer">Volunteer Opportunities</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>professorfeedback@hotmail.com</li><li><a href="#contact">Send a message →</a></li></ul></div>
+    </div>
+    <div class="fine">Organization details and mission statements come from each nonprofit's official website. Check their pages for current schedules.</div>
+  </div>
 </footer>
 
 <script>
@@ -335,7 +387,7 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
     var h=(location.hash||'#home').slice(1); if(pages.indexOf(h)<0) h='home';
     document.querySelectorAll('.page').forEach(function(p){p.hidden=p.dataset.page!==h});
     document.querySelectorAll('nav a').forEach(function(a){if(a.dataset.link===h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-    var t={home:'Panther Service Guide',nonprofits:'Nonprofits · Panther Service Guide',volunteer:'Volunteer Opportunities · Panther Service Guide',contact:'Contact Us · Panther Service Guide'}[h];
+    var t={home:'Atlanta Service Guide',nonprofits:'Nonprofits · Atlanta Service Guide',volunteer:'Volunteer Opportunities · Atlanta Service Guide',contact:'Contact Us · Atlanta Service Guide'}[h];
     document.title=t; window.scrollTo(0,0);
   }
   window.addEventListener('hashchange',show); show();
@@ -344,12 +396,11 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
 
   var EVENTS=[
     {d:'2026-09-24',org:'oh',title:'Party in the Kitchen',time:'6:30 PM',where:'The Foundry at Puritan Mill, 916 Joseph E. Lowery Blvd NW',desc:"Open Hand's 23rd annual fundraiser featuring Atlanta chefs. Volunteers help with setup and guest check-in.",url:'https://www.openhandatlanta.org/special-events/party-in-the-kitchen/'},
-    {d:'2026-10-16',org:'acfb',title:'Can Can Ball 2026',time:'Evening',where:"Zoo Atlanta's Savanna Hall, Grant Park",desc:'Black-tie gala hosted by Atlanta’s apartment industry to raise money for the Atlanta Community Food Bank.',url:'https://www.acfb.org/events/can-can-ball-2026/'},
-    {d:'2027-01-18',org:'gsu',title:'MLK Day of Service',time:'All day',where:'Georgia State University & partner sites',desc:'Georgia State’s annual day of service on Martin Luther King Jr. Day. Sign up through PawsForACause.',url:'https://engagement.gsu.edu/leadership-and-service/get-involved/serve/'}
+    {d:'2026-10-16',org:'acfb',title:'Can Can Ball 2026',time:'Evening',where:"Zoo Atlanta's Savanna Hall, Grant Park",desc:'Black-tie gala hosted by Atlanta’s apartment industry to raise money for the Atlanta Community Food Bank.',url:'https://www.acfb.org/events/can-can-ball-2026/'}
   ];
   var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var ORG={acfb:'Atlanta Community Food Bank',hab:'Atlanta Habitat for Humanity',oh:'Open Hand Atlanta',gsu:'Georgia State University'};
-  var MIN={y:2026,m:8}, MAX={y:2027,m:0};
+  var ORG={acfb:'Atlanta Community Food Bank',hab:'Atlanta Habitat for Humanity',oh:'Open Hand Atlanta'};
+  var MIN={y:2026,m:8}, MAX={y:2026,m:11};
   function cmp(a,b){return (a.y*12+a.m)-(b.y*12+b.m)}
   function pad(n){return (n<10?'0':'')+n}
   function key(y,m,d){return y+'-'+pad(m+1)+'-'+pad(d)}
@@ -359,7 +410,11 @@ footer{padding-block:28px;color:var(--muted);font-size:14px}
   var selected=null;
   function esc(t){var e=document.createElement('span');e.textContent=t;return e.innerHTML}
   function fmt(k){var p=k.split('-');return new Date(+p[0],+p[1]-1,+p[2]).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})}
-  function card(e){return '<article class="card-ev '+e.org+'"><span class="when">'+esc(fmt(e.d))+' · '+esc(e.time)+'</span><h4>'+esc(e.title)+'</h4><p class="where">'+esc(ORG[e.org])+' · '+esc(e.where)+'</p><p>'+esc(e.desc)+'</p><a href="'+e.url+'" target="_blank" rel="noopener">Event details →</a></article>'}
+  function gcal(e){var d=e.d.replace(/-/g,''),p=e.d.split('-'),n=new Date(+p[0],+p[1]-1,+p[2]+1),d2=n.getFullYear()+pad(n.getMonth()+1)+pad(n.getDate());
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(e.title)+'&dates='+d+'/'+d2+'&details='+encodeURIComponent(e.time+' · '+e.desc+' '+e.url)+'&location='+encodeURIComponent(e.where);}
+  (function(){var up=EVENTS.filter(function(e){return e.d>=todayKey})[0], el=document.getElementById('nextText'); if(el) el.innerHTML=up?'<b>'+esc(up.title)+'</b> · '+esc(fmt(up.d))+' · '+esc(up.time):'Check back soon for new events.';
+    var tc=document.getElementById('toCal'); if(tc) tc.addEventListener('click',function(ev){ev.preventDefault();document.getElementById('cal').scrollIntoView({behavior:'smooth'});});})();
+  function card(e){return '<article class="card-ev '+e.org+'"><span class="when">'+esc(fmt(e.d))+' · '+esc(e.time)+'</span><h4>'+esc(e.title)+'</h4><p class="where">'+esc(ORG[e.org])+' · '+esc(e.where)+'</p><p>'+esc(e.desc)+'</p><a href="'+e.url+'" target="_blank" rel="noopener">Event details →</a><a class="gcal" href="'+gcal(e)+'" target="_blank" rel="noopener">+ Add to Google Calendar</a></article>'}
   function render(){
     var y=cur.y,m=cur.m;
     document.getElementById('calTitle').textContent=MONTHS[m]+' '+y;
