@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panther Service Guide</title>
+<meta name="description" content="Nonprofits and volunteer opportunities for Georgia State University students.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F4F6FB; --surface:#FFFFFF; --ink:#0E1A36; --muted:#4A5675;
+  --line:#D6DCEA; --blue:#0039A6; --blue-soft:#E3EAF8; --red:#C8102E;
+  --on-blue:#FFFFFF; --ok:#1E7A46;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Libre Franklin",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0A1122; --surface:#121C33; --ink:#E8EDF8; --muted:#A3AECB;
+    --line:#26345A; --blue:#6E9BFF; --blue-soft:#18264A; --red:#FF6B7F;
+    --on-blue:#0A1122; --ok:#5BD08C;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0A1122; --surface:#121C33; --ink:#E8EDF8; --muted:#A3AECB;
+  --line:#26345A; --blue:#6E9BFF; --blue-soft:#18264A; --red:#FF6B7F;
+  --on-blue:#0A1122; --ok:#5BD08C;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 16px/1.6 var(--body)}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+header.top{background:var(--blue);color:var(--on-blue)}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;padding-block:14px}
+.brand{font:800 22px/1 var(--display);letter-spacing:.04em;text-transform:uppercase}
+nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+nav a{color:var(--on-blue);text-decoration:none;font-weight:500;font-size:15px}
+nav a:hover{text-decoration:underline}
+.hero{padding-block:48px 36px;border-bottom:1px solid var(--line)}
+.eyebrow{font:600 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 12px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-weight:800;font-size:clamp(40px,7vw,72px);line-height:.95;text-transform:uppercase;max-width:14ch}
+.lede{max-width:62ch;color:var(--muted);font-size:18px;margin:18px 0 0}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:24px;font-size:15px;color:var(--muted)}
+.stats b{font:800 28px/1 var(--display);color:var(--ink);margin-right:6px}
+section{padding-block:48px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:24px}
+h2{font-weight:800;font-size:clamp(30px,4.5vw,44px);text-transform:uppercase;line-height:1}
+.sec-head p{margin:0;color:var(--muted);max-width:52ch}
+.orgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.org{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.org h3{font-weight:800;font-size:28px;line-height:1.05;text-transform:uppercase}
+.tag{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.org p{margin:0}
+blockquote{margin:0;padding:12px 16px;background:var(--blue-soft);border-radius:4px;font-style:italic}
+blockquote cite{display:block;font-style:normal;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.org .more{margin-top:auto;font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:500 14px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--on-blue)}
+.ops{display:flex;flex-direction:column;border-top:2px solid var(--ink)}
+.op{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1.2fr);gap:16px 28px;padding-block:22px;border-bottom:1px solid var(--line)}
+.op h3{font-weight:800;font-size:24px;line-height:1.05;text-transform:uppercase}
+.op .who{font-size:14px;color:var(--muted);margin-top:6px}
+.op p{margin:0}
+.label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.op ul{margin:0;padding-left:18px}
+.op a.go{display:inline-block;margin-top:10px;font-weight:600}
+@media (max-width:760px){.op{grid-template-columns:1fr}}
+.contact{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.email-box{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px;padding:12px 14px;border:1px dashed var(--line);border-radius:4px}
+.email-box code{font:600 16px/1.3 ui-monospace,Menlo,Consolas,monospace;user-select:all;word-break:break-all}
+form{display:grid;gap:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:4px}
+input,select,textarea{width:100%;font:400 16px var(--body);color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:4px;padding:10px 12px}
+textarea{min-height:130px;resize:vertical}
+.btn{font:700 16px var(--body);background:var(--red);color:#fff;border:0;border-radius:4px;padding:12px 22px;cursor:pointer;justify-self:start}
+.btn.alt{background:transparent;color:var(--blue);border:1px solid var(--blue);padding:6px 12px;font-size:14px}
+.status{margin:0;font-size:15px}
+.status.ok{color:var(--ok)}
+.status.err{color:var(--red)}
+.hp{position:absolute;left:-9999px}
+footer{padding-block:28px;color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head><body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Panther Service Guide</div>
+    <nav aria-label="Sections">
+      <a href="#orgs">Nonprofits</a>
+      <a href="#volunteer">Volunteer</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Georgia State University · Atlanta, GA</p>
+      <h1>Serve the city you study in</h1>
+      <p class="lede">A student-built guide to three Atlanta nonprofits that Georgia State Panthers can volunteer with, plus five specific ways to get involved this semester. Each listing links to the organization's official page so you can sign up directly.</p>
+      <div class="stats"><span><b>3</b>nonprofits</span><span><b>5</b>volunteer opportunities</span><span><b>0</b>experience required for most</span></div>
+    </div>
+  </div>
+
+  <section id="orgs">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The Nonprofits</h2>
+        <p>Our summary in our own words, followed by each organization's official mission statement.</p>
+      </div>
+      <div class="orgs">
+        <article class="org">
+          <span class="tag">Hunger relief</span>
+          <h3>Atlanta Community Food Bank</h3>
+          <p>The Food Bank collects donated and purchased food and moves it out to hundreds of partner pantries, shelters and community sites across metro Atlanta and north Georgia. Beyond handing out groceries, it works on the root causes of hunger through advocacy and nutrition education, and it depends on thousands of volunteers every year to sort and pack food.</p>
+          <blockquote><cite>Official mission</cite>“Our mission is to fight hunger by engaging, educating and empowering our community.”</blockquote>
+          <a class="more" href="https://www.acfb.org/" target="_blank" rel="noopener">Visit acfb.org →</a>
+        </article>
+        <article class="org">
+          <span class="tag">Affordable housing</span>
+          <h3>Atlanta Habitat for Humanity</h3>
+          <p>Atlanta Habitat helps working families become homeowners by building and repairing affordable houses alongside them. Future homeowners put in "sweat equity" hours and take financial classes, and volunteers do much of the building, painting and repair work. Its ReStore thrift shops sell donated home goods to help fund the mission.</p>
+          <blockquote><cite>Official mission</cite>“Community-built, sustainable homeownership.”</blockquote>
+          <a class="more" href="https://www.atlantahabitat.org/" target="_blank" rel="noopener">Visit atlantahabitat.org →</a>
+        </article>
+        <article class="org">
+          <span class="tag">Food as medicine</span>
+          <h3>Open Hand Atlanta</h3>
+          <p>Open Hand prepares medically tailored meals for Georgians living with chronic illnesses such as diabetes, heart disease, kidney disease and HIV, and delivers them to people's homes. It pairs those meals with nutrition education so clients can manage their health. Volunteers help cook, pack and deliver.</p>
+          <blockquote><cite>Official mission</cite>“We cook. We deliver. We teach. We care.”</blockquote>
+          <a class="more" href="https://www.openhandatlanta.org/" target="_blank" rel="noopener">Visit openhandatlanta.org →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="volunteer" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Volunteer Opportunities</h2>
+        <p>Five ways to serve, with at least one at every organization.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter by organization">
+        <button class="chip" id="f-all" data-f="all" aria-pressed="true">All (5)</button>
+        <button class="chip" id="f-acfb" data-f="acfb" aria-pressed="false">Food Bank (2)</button>
+        <button class="chip" id="f-hab" data-f="hab" aria-pressed="false">Habitat (2)</button>
+        <button class="chip" id="f-oh" data-f="oh" aria-pressed="false">Open Hand (1)</button>
+      </div>
+      <div class="ops">
+        <article class="op" data-org="acfb">
+          <div><h3>Hunger Action Center Sort &amp; Pack</h3><div class="who">Atlanta Community Food Bank · 3400 N. Desert Dr., East Point</div></div>
+          <div><div class="label">What you'll do</div><p>Work a shift in the Food Bank's main warehouse sorting and packing donated food, repackaging bulk produce and grains into family-size portions, and boxing non-perishable items that go out to partner agencies.</p></div>
+          <div><div class="label">Skills &amp; requirements</div><ul><li>Ages 8 and up; no experience needed</li><li>Closed-toe, closed-heel shoes required</li><li>Arrive 30 minutes early and stay for the full shift</li><li>Able to stand and lift light boxes</li></ul><a class="go" href="https://www.acfb.org/volunteer/" target="_blank" rel="noopener">Official description →</a></div>
+        </article>
+        <article class="op" data-org="acfb">
+          <div><h3>Community Food Center Volunteer</h3><div class="who">Atlanta Community Food Bank · Atlanta (MLK Jr. Dr. SW), Marietta, Jonesboro, Stone Mountain</div></div>
+          <div><div class="label">What you'll do</div><p>Help at a neighborhood food center where families pick up groceries directly: sorting food, packing boxes and restocking shelves. The Atlanta center on MLK Jr. Drive is the closest to campus.</p></div>
+          <div><div class="label">Skills &amp; requirements</div><ul><li>Ages 8 and up; no experience needed</li><li>Friendly, respectful attitude with clients</li><li>Closed-toe, closed-heel shoes required</li></ul><a class="go" href="https://www.acfb.org/volunteer/" target="_blank" rel="noopener">Official description →</a></div>
+        </article>
+        <article class="op" data-org="hab">
+          <div><h3>Home Build &amp; Paint Crew</h3><div class="who">Atlanta Habitat for Humanity · Build sites around Atlanta</div></div>
+          <div><div class="label">What you'll do</div><p>Join a construction crew working alongside future homeowners to frame, build and paint affordable homes. Site leaders teach the tasks on the day, so you'll pick up real construction skills as you go.</p></div>
+          <div><div class="label">Skills &amp; requirements</div><ul><li>No construction experience necessary, just a willingness to learn</li><li>Attend a volunteer orientation before your first shift</li><li>Comfortable with outdoor, physical work</li></ul><a class="go" href="https://www.atlantahabitat.org/volunteer/individual-volunteering" target="_blank" rel="noopener">Official description →</a></div>
+        </article>
+        <article class="op" data-org="hab">
+          <div><h3>ReStore Volunteer</h3><div class="who">Atlanta Habitat for Humanity · ReStore locations</div></div>
+          <div><div class="label">What you'll do</div><p>Keep Habitat's home-goods thrift stores running: help customers on the sales floor, build merchandise displays, test and clean donated items, and unload donations on the loading dock.</p></div>
+          <div><div class="label">Skills &amp; requirements</div><ul><li>Customer-service skills for sales-floor roles</li><li>Creativity and organization for merchandising</li><li>Able to lift and move items for dock and warehouse roles</li><li>Watch the orientation video and complete an online questionnaire</li></ul><a class="go" href="https://www.atlantahabitat.org/restore/volunteer-at-the-restore" target="_blank" rel="noopener">Official description →</a></div>
+        </article>
+        <article class="op" data-org="oh">
+          <div><h3>Meal Packing &amp; Delivery</h3><div class="who">Open Hand Atlanta · Kitchen and delivery routes</div></div>
+          <div><div class="label">What you'll do</div><p>Pack medically tailored meals and market baskets in Open Hand's kitchen, assist the culinary team, help load delivery vehicles, or drive a route bringing meals to clients' homes.</p></div>
+          <div><div class="label">Skills &amp; requirements</div><ul><li>No experience needed for packing and loading shifts</li><li>Delivery drivers need their own vehicle and a valid license (confirm on the sign-up page)</li><li>Individuals and groups welcome; sign up for shifts on the volunteer calendar</li></ul><a class="go" href="https://www.openhandatlanta.org/volunteer/" target="_blank" rel="noopener">Official description →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Contact Us</h2>
+        <p style="color:var(--muted);margin:12px 0 0">Questions, feedback, or an organization we should add? Send a message and it will be forwarded to:</p>
+        <div class="email-box"><code id="email">professorfeedback@hotmail.com</code><button class="btn alt" id="copy" type="button">Copy</button></div>
+      </div>
+      <form id="contactForm" action="https://formsubmit.co/professorfeedback@hotmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New message from the Panther Service Guide">
+        <input type="hidden" name="_template" value="table">
+        <input class="hp" type="text" name="_honey" id="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="row2">
+          <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+          <div><label for="from">Your email</label><input id="from" name="email" type="email" required autocomplete="email"></div>
+        </div>
+        <div><label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option>Question about an opportunity</option>
+            <option>Suggest a nonprofit</option>
+            <option>Website feedback</option>
+            <option>Other</option>
+          </select></div>
+        <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+        <button class="btn" type="submit" id="send">Send message</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Panther Service Guide · A Georgia State University class project. Organization details and mission statements come from each nonprofit's official website; check their pages for current schedules.</div>
+</footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip'), ops=document.querySelectorAll('.op');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
+    ops.forEach(function(o){o.hidden=!(c.dataset.f==='all'||o.dataset.org===c.dataset.f)});
+  })});
+
+  document.getElementById('copy').addEventListener('click',function(){
+    var b=this,t=document.getElementById('email').textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';}
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},sel)}catch(e){sel()}
+  });
+
+  var f=document.getElementById('contactForm'), st=document.getElementById('status');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(document.getElementById('honey').value) return;
+    var ok=['name','from','message'].every(function(id){return document.getElementById(id).value.trim()});
+    var em=document.getElementById('from');
+    if(!ok||!em.checkValidity()){st.className='status err';st.textContent='Please fill in your name, a valid email, and a message.';return;}
+    st.className='status';st.textContent='Sending…';
+    var data=new FormData(f);
+    fetch('https://formsubmit.co/ajax/professorfeedback@hotmail.com',{method:'POST',headers:{'Accept':'application/json'},body:data})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(j&&(j.success==='true'||j.success===true)){st.className='status ok';st.textContent='Thanks, '+document.getElementById('name').value.trim()+'! Your message was sent.';f.reset();}
+        else throw new Error();
+      })
+      .catch(function(){st.className='status err';st.textContent='Sorry, the message could not be sent. Please copy the address above and email it directly.';});
+  });
+})();
+</script>
+</body></html>
